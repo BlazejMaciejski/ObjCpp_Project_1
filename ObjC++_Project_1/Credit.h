@@ -18,6 +18,10 @@ public:
 		double thisRate = (creditSize / remainingCreditInstallments);
 		creditSize -= thisRate;
 		remainingCreditInstallments--;
+		if (remainingCreditInstallments < 0)
+		{
+			return 0;
+		}
 		return thisRate;
 	}
 };

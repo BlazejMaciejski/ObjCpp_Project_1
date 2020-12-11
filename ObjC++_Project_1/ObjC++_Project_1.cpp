@@ -12,17 +12,18 @@ int main()
     std::unique_ptr<Company> ourCompany (new Company);
     std::unique_ptr<Rules> ourRules (new Rules);
     bool state;
-    std::cout << "Hello World!\n";
 
     ourCompany->hire(Engineer{});
     ourCompany->hire(Magazineer{});
     ourCompany->hire(Marketeer{});
     ourCompany->hire(Shift_Worker{});
 
-    std::cout << "Warunek Wygranej - Wartosc = " << ourRules->goal << "  na przestrzeni : "<<ourRules->valueCalculatedByXMonths <<"miesiecy  \n";
-    std::cout << "Aktualna wartosc spolki:  " << ourCompany->companyValue() << "\n";
-    std::cout << "Aktualny stan konta:  " << ourCompany->getBankBalance() << "\n";
-
+    {
+        std::cout << "Liczby moga nie miec sensu - sa tu tylko jako ozdoba dla kodu \n";
+        std::cout << "Warunek Wygranej - Wartosc = " << ourRules->goal << "  na przestrzeni : " << ourRules->valueCalculatedByXMonths << "  miesiecy  \n";
+        std::cout << "Aktualna wartosc spolki:  " << ourCompany->companyValue() << "\n";
+        std::cout << "Aktualny stan konta:  " << ourCompany->getBankBalance() << "\n";
+    }
 
     std::string currentCommand;
 

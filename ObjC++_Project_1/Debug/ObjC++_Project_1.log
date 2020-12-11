@@ -1,8 +1,12 @@
 ﻿  ObjC++_Project_1.cpp
   The contents of <compare> are available only with C++20 or later.
 C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Worker.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(180,103): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(186,50): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(192,17): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(22,36): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(149,20): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(150,25): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(151,26): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(185,103): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(191,50): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\Company.h(197,17): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
 C:\Users\01123905\source\repos\ObjC++_Project_1\ObjC++_Project_1\ObjC++_Project_1.cpp(14,10): warning C4101: 'state': unreferenced local variable
   ObjC++_Project_1.vcxproj -> C:\Users\01123905\source\repos\ObjC++_Project_1\Debug\ObjC++_Project_1.exe

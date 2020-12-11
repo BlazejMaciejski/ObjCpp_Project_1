@@ -19,7 +19,7 @@ private:
 	//HRorWorkerPrinter IHireWorkers;
 	Rules theseAreOurRules{};
 
-	double bankBalance = theseAreOurRules.startingCash;
+	int bankBalance = theseAreOurRules.startingCash;
 	int numberOfCredits;
 	//std::unique_ptr<Credit[]> Credits;
 	std::vector<std::unique_ptr<Credit>> Credits;
@@ -41,19 +41,19 @@ public:
 	//tutaj trzeba zrobic max loan size * company value
 	void takeCredit(double size, int time)
 	{
-		if ((size + amountInLoans()) <= theseAreOurRules.maxLoanSize && time <= theseAreOurRules.maxTimeToRepayLoan)
+		if ((size + amountInLoans()) <= theseAreOurRules.maxLoanSize * companyValue() && time <= theseAreOurRules.maxTimeToRepayLoan)
 		{
 			std::unique_ptr<Credit> tempPtr(new Credit(size,time));
 			Credits.push_back(std::move(tempPtr));
 		}
-		else if ((size + amountInLoans()) > theseAreOurRules.maxLoanSize && time > theseAreOurRules.maxTimeToRepayLoan)
+		else if ((size + amountInLoans()) > theseAreOurRules.maxLoanSize * companyValue() && time > theseAreOurRules.maxTimeToRepayLoan)
 		{
-			std::cout << "loan too big, you can still take: " << theseAreOurRules.maxLoanSize - size - amountInLoans() << "\n";
+			std::cout << "loan too big, you can still take: " << theseAreOurRules.maxLoanSize * companyValue() - size - amountInLoans() << "\n";
 			std::cout << "Time to repay too long. Max time is:" << theseAreOurRules.maxTimeToRepayLoan << "\n";
 		}
-		else if ((size + amountInLoans()) > theseAreOurRules.maxLoanSize)
+		else if ((size + amountInLoans()) > theseAreOurRules.maxLoanSize * companyValue())
 		{
-			std::cout << "loan too big, you can still take: " << theseAreOurRules.maxLoanSize - amountInLoans() << "\n";
+			std::cout << "loan too big, you can still take: " << theseAreOurRules.maxLoanSize * companyValue() - amountInLoans() << "\n";
 		}
 		else if (time > theseAreOurRules.maxTimeToRepayLoan)
 		{
@@ -135,7 +135,7 @@ public:
 	{
 		int amountOfEngineers = 0;
 		int amoutSold = amountOfProductSold();
-		std::cout << amoutSold << "\n";
+		//std::cout << amoutSold << "\n";
 
 		for (auto const& worker : Workers)
 		{
@@ -145,9 +145,14 @@ public:
 			}
 		}
 
-		std::cout << amountOfEngineers << "\n";
-
-		bankBalance += (amoutSold * theseAreOurRules.efficiencyOfEngineer * amountOfEngineers - payBackLoans() - paySalary() );
+		//std::cout << amountOfEngineers << "\n";
+		int amountEarned = amoutSold * theseAreOurRules.efficiencyOfEngineer * amountOfEngineers;
+		int amountPaidInLoans = payBackLoans();
+		int amountPaidInSalary = paySalary();
+		
+		std::cout << "Zarobiono : " << amountEarned << "\nNa kredyty wydano: " << amountPaidInLoans << "\nNa wyplaty wydano: " << amountPaidInSalary<<"\n";
+		
+		bankBalance += (amountEarned - amountPaidInLoans - amountPaidInSalary);
 	}
 
 	int amountOfProductSold()
