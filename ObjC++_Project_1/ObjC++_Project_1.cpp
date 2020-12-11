@@ -19,6 +19,7 @@ int main()
     ourCompany->hire(Marketeer{});
     ourCompany->hire(Shift_Worker{});
 
+    std::cout << "Warunek Wygranej - Wartosc = " << ourRules->goal << "  na przestrzeni : "<<ourRules->valueCalculatedByXMonths <<"miesiecy  \n";
     std::cout << "Aktualna wartosc spolki:  " << ourCompany->companyValue() << "\n";
     std::cout << "Aktualny stan konta:  " << ourCompany->getBankBalance() << "\n";
 
@@ -59,6 +60,7 @@ int main()
         {
             ourCompany->calculateEOM();
 
+            std::cout << "Warunek Wygranej - Wartosc = " << ourRules->goal << "  na przestrzeni : " << ourRules->valueCalculatedByXMonths << "miesiecy  \n";
             std::cout << "Aktualna wartosc spolki:  " << ourCompany->companyValue() << "\n";
             std::cout << "Aktualny stan konta:  " << ourCompany->getBankBalance() << "\n";
 
